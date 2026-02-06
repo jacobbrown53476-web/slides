@@ -13,196 +13,36 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
       overflow: hidden;
-      background: #0f172a;
+      background: linear-gradient(135deg, #0f172a, #020617);
       color: white;
     }
 
     .slides {
       height: 100vh;
       width: 100%;
-      transition: transform 0.6s ease;
+      transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
     }
 
     .slide {
       height: 100vh;
-      padding: 60px;
+      padding: 70px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      opacity: 0;
+      transform: translateY(40px) scale(0.98);
+      transition: all 0.8s ease;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 2.3rem;
-      margin-bottom: 15px;
-    }
-
-    p, li {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      max-width: 900px;
-    }
-
-    ul {
-      margin-left: 25px;
-    }
-
-    .controls {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-    }
-
-    button {
-      background: #38bdf8;
-      border: none;
-      padding: 12px 18px;
-      margin-left: 10px;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 6px;
-    }
-
-    button:hover {
-      background: #0ea5e9;
-    }
-
-    .slide-number {
-      position: fixed;
-      bottom: 30px;
-      left: 30px;
-      font-size: 1rem;
-      opacity: 0.7;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="slides" id="slides">
-
-    <!-- Slide 1 -->
-    <section class="slide">
-      <h1>Jacob Brown</h1>
-      <p>Grade 9 Student</p>
-    </section>
-
-    <!-- Slide 2 -->
-    <section class="slide">
-      <h2>Basic Information</h2>
-      <ul>
-        <li>I go to Bishop Ryan Catholic High School</li>
-        <li>I am in Grade 9</li>
-        <li>My favourite subject last semester was English</li>
-      </ul>
-    </section>
-
-    <!-- Slide 3 -->
-    <section class="slide">
-      <h2>Hobbies</h2>
-      <ul>
-        <li>Playing video games with my friends</li>
-        <li>Playing hockey</li>
-        <li>Rowing in the summer</li>
-      </ul>
-    </section>
-
-    <!-- Slide 4 -->
-    <section class="slide">
-      <h2>Person I Look Up To</h2>
-      <h3>Lane Hutson</h3>
-      <p>
-        Lane Hutson is a defenceman for the Montreal Canadiens. He quickly rose to
-        become one of the top defencemen in the league, winning rookie of the year
-        last season and ranking third in points by a defenceman this year.
-      </p>
-      <p>
-        Drafted by Montreal from Boston University in 2022, he has faced criticism
-        for his size at 5’9”, but makes up for it with speed, skill, and smart plays.
-      </p>
-      <p>
-        Montreal has always been my favourite team, and I love watching him play.
-      </p>
-    </section>
-
-    <!-- Slide 5 -->
-    <section class="slide">
-      <h2>Why I Am Excited For This Class</h2>
-      <ul>
-        <li>I am interested in learning how to code</li>
-        <li>I like PC building</li>
-        <li>My neighbour told me the course was good</li>
-      </ul>
-    </section>
-
-    <!-- Slide 6 -->
-    <section class="slide">
-      <h2>Fun Facts</h2>
-      <ul>
-        <li>I was born in St. John’s, Newfoundland</li>
-        <li>My favourite food is McDonald’s chicken nuggets</li>
-        <li>I can juggle</li>
-        <li>If I could go anywhere in the world, it would be Florida</li>
-      </ul>
-    </section>
-
-    <!-- Slide 7 -->
-    <section class="slide">
-      <h2>Thank You</h2>
-      <p>Thank you for listening to my presentation!</p>
-    </section>
-
-  </div>
-
-  <div class="controls">
-    <button onclick="prevSlide()">◀</button>
-    <button onclick="nextSlide()">▶</button>
-  </div>
-
-  <div class="slide-number" id="slideNumber"></div>
-
-  <script>
-    let currentSlide = 0;
-    const slides = document.getElementById("slides");
-    const totalSlides = slides.children.length;
-    const slideNumber = document.getElementById("slideNumber");
-
-    function updateSlide() {
-      slides.style.transform = `translateY(-${currentSlide * 100}vh)`;
-      slideNumber.textContent = `Slide ${currentSlide + 1} of ${totalSlides}`;
-    }
-
-    function nextSlide() {
-      if (currentSlide < totalSlides - 1) {
-        currentSlide++;
-        updateSlide();
-      }
-    }
-
-    function prevSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateSlide();
-      }
-    }
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowDown" || e.key === "ArrowRight") {
-        nextSlide();
-      }
-      if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
-        prevSlide();
-      }
-    });
-
-    updateSlide();
-  </script>
-
-</body>
-</html>
+      background: linear-gradient(to right, #38bdf8, #22c
+   
